@@ -3,7 +3,8 @@
         <div class="flex justify-between gap-12">
             <img class="w-24 h-24 rounded-full object-cover" :src="getImgSrc(data.photo.url)">
             <div class="w-full">
-                <div class="text-lg">{{ data.name }}</div>
+                <div class="text-lg alumni text-gray-700">{{ data.name }}</div>
+                <div class="h-px bg-gray-300 w-full my-2"></div>
                 <div class="text-sm">
                     <p v-for="(p, pIndex) in data.about" :key="pIndex">
                     <p v-for="(underP, underPIndex) in p.children" :key="underPIndex">
@@ -49,7 +50,7 @@ import { onMounted } from 'vue'
 import { getImgSrc } from '../../composables/api'
 onMounted(() => {
     console.dir('--child--')
-    console.log(props, '--child--')
+    console.dir(props, '--child--')
 })
 
 </script>

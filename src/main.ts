@@ -3,7 +3,7 @@ import App from './App.vue'
 
 import router from '@/router'
 
-
+import 'primeicons/primeicons.css'
 import '../src/assets/main.css'
 
 const app = createApp(App);
