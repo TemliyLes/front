@@ -5,8 +5,9 @@ import OPN from '../components/pages/OPN.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    { path: '/', redirect: '/main' },
     {
-      path: '/',
+      path: '/main',
       component: Main,
     },
     {
@@ -17,6 +18,7 @@ const router = createRouter({
       path: '/opn',
       component: OPN,
     },
+
   ],
 })
 export default router
