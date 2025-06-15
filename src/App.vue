@@ -4,10 +4,10 @@ import Menu from './components/layout/Menu.vue';
 
 <template>
   <div class="relative">
-    <div class="fixed top-0 h-12 bg-black w-full"></div>
+    <!-- <div class="fixed top-0 h-12 bg-black w-full"></div> -->
     <div class="flex top-0">
-      <Menu></Menu>
-      <div class="pt-12"><router-view></router-view></div>
+      <Menu class="shrink-0"></Menu>
+      <div class="w-full shrink-1 overflow-hidden"><router-view></router-view></div>
     </div>
   </div>
   <!-- <HelloWorld msg="Vite + Vue" /> -->

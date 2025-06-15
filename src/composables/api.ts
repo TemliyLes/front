@@ -1,6 +1,7 @@
 import { ref } from 'vue'
 
 const personData = ref();
+const opnData = ref();
 const API_TOKEN = 'e2160631373ed806e316cc2252dfd44a27ea795de8113b55e7f143899e55b7ec5a5cc3525775937dce878cdfdf725a278a5f813911ebd5e14662f8223410e14907303d4c3bb47c1631198a2c85afb531b1f4b2a3ecd03632e375e49f9e8cc6e4b225345f58163f59b012b114028cc8b530365e1524e43d8e05dd0e4346fba457'
 
 const headers = {
@@ -29,4 +30,19 @@ async function getData() {
     }
 }
 
-export { personData, getData, getImgSrc }
+async function getOPNData() {
+    try {
+        const response = await fetch(BASE_URL + '/api/opns?populate[0]=lines&&populate[1]=people', headers);
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+        const result: any = await response.json();
+        opnData.value = result?.data
+    } catch (error) {
+        if (error instanceof Error) {
+            console.log('фиаско')
+        }
+    }
+}
+
+export { personData, getData, getImgSrc, getOPNData, opnData }

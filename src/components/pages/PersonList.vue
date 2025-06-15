@@ -14,7 +14,6 @@ import { onMounted } from 'vue'
 
 
 onMounted(() => {
-    console.log('--Parent--')
     getData()
 })
 </script>
